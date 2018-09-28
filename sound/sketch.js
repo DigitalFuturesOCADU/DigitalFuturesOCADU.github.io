@@ -16,7 +16,7 @@ function setup() {
 function draw() {
   
   if(mouseX < 200){
-    if (!survive.isPlaying()) 
+    if (survive.isPlaying() == 0) 
     {
     survive.play();
     }
