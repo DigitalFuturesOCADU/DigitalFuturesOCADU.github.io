@@ -4,6 +4,7 @@ var button;
 
 
 function setup() {
+  getAudioContext().resume();
   // specify multiple formats for different browsers
   fingers = createVideo(['GoGoGloves.mp4']);
   button = createButton('play');
