@@ -1,9 +1,9 @@
-var rooster;
+
 var survive;
 
 
 function preload() {
-  rooster = loadSound("rooster.mp3");
+  
   survive = loadSound("survive.mp3");
 }
 
@@ -16,7 +16,10 @@ function setup() {
 function draw() {
   
   if(mouseX < 200){
+    if (!survive.isPlaying()) 
+    {
     survive.play();
+    }
   }else{
     survive.pause();
   }
