@@ -1,4 +1,4 @@
-ar playing = false;
+var playing = false;
 var fingers;
 var button;
 
