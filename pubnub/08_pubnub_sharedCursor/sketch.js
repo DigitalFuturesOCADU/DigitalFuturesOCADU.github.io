@@ -39,7 +39,7 @@ function setup()
 
   cursors.push(new Allcursors(mouseX,mouseY,dataServer.getUUID()));
   console.log(dataServer.getUUID());
-setInterval(wheresMyCursor, 300);
+setInterval(wheresMyCursor, 100);
 }
 
 function draw() 
