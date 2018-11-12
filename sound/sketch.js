@@ -9,13 +9,14 @@ function preload() {
 
 function setup() {
   getAudioContext().resume();
-  rooster.play();
+ 
   createCanvas(400, 400);
 }
 
 function draw() {
   
   if(mouseX < 200){
+    console.log(survive.isPlaying);
     if (survive.isPlaying() == 0) 
     {
     survive.play();
