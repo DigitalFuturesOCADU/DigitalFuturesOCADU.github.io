@@ -42,13 +42,18 @@ function draw()
 {
 
 background(255);
+fill(255,0,0);
 
+ellipse(width/2, height/2, map(sin((millis())*1),-1,1,5,200));
+
+
+/*
   //cycle through the ripples array that holds all of the objects to perform the calculations on each one.
   for (var i = 0;i<ripples.length;i++)
   {
     ripples[i].display();  //this calls the display function inside each object
   }
-
+*/
 }
 
 

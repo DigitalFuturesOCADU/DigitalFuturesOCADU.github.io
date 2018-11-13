@@ -45,7 +45,7 @@ setInterval(wheresMyCursor, 100);
 function draw() 
 {
   background(255);
-  //wheresMyCursor();
+  //variables used for averaging the coordinates
   var totalX = 0;
   var totalY = 0;
  ///draw all the cursors 
@@ -79,8 +79,6 @@ ellipse(avgX,avgY,20,20);
     clicks[i].drawClick();
   }
 
-
-
 }
 
 
@@ -100,9 +98,7 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
     var whoAreYou = inMessage.publisher;
     var clickX = inMessage.message.x;
     var clickY = inMessage.message.y;
-      //console.log(whoAreYou);
-      //console.log("  "+dataServer.getUUID());
-      console.log(cursors.length);
+
 
 
  var newinput = true;
@@ -184,7 +180,6 @@ this.ypos = y;
   stroke(255,0,0);
   strokeWeight(2);
   ellipse(this.xpos,this.ypos,20,20);
-
   }
 
 }
