@@ -27,7 +27,7 @@ function setup()
   createCanvas(windowWidth, windowHeight);
   background(255);
   
-  setShakeThreshold(90);
+  setShakeThreshold(50);
 
    // initialize pubnub
   dataServer = new PubNub(
