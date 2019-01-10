@@ -40,7 +40,7 @@ function setup()
     background(255);
     noStroke();
     fill(0);  
-    textSize(90)
+    textSize(90);
     text("!!!SHAKE!!!", width/2, height/2);
 }
 
