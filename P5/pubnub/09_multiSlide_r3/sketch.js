@@ -2,7 +2,8 @@
  * Creation & Computation - Digital Futures, OCAD University
  * Kate Hartman / Nick Puckett
  * 
- * Receiver file that cycles through images based on the input from the controller 
+ * Receiver file that applies the message to an animated polygon
+ * links the receive function with the draw loop
  */
 
 // server variables
@@ -13,21 +14,7 @@ var subKey = 'sub-c-64587bc8-b0cf-11e6-a7bb-0619f8945a4f';
 //name used to sort your messages. used like a radio station. can be called anything
 var channelName = "powerpoint";
 
-
-//image variables
-var img = [];
-var totalImages = 4;
-var slideNumber = 0;
-
-function preload() 
-{
-  //rather than making separate variables we are loading them all into an array
-  for (var i = 0; i<totalImages; i++) 
-  {
-    img[i] = loadImage("load/img" + (i+1) + ".jpg");
-  }
-
-}
+var sides = 3  //default number of sides to start
 
 
 function setup() 
@@ -50,25 +37,42 @@ function setup()
   dataServer.subscribe({channels: [channelName]});
 
 
-    //display a waiting message
-    background(255);
-    noStroke();
-    fill(0);  
-    textSize(30)
-    text("Waiting", width/2, height/2);
 
 }
 
 function draw() 
 {
+  background(255);
 
+  //draws and rotates the polygon
+    push();
+    fill(255);
+    stroke(0);
+    strokeWeight(10);
+    translate(width/2, height/2);
+    rotate(frameCount / -100.0);
+    polygon(0, 0, 300, sides); 
+    pop();
 
 }
 
 function readIncoming(inMessage) //when new data comes in it triggers this function, 
 {                               
-    background(255);
-    image(img[inMessage.message.slide],0,0); //show the image corresponds to the slide number in the array
+   
+    sides = inMessage.message.slide +4; //take the number from the message and assign it to the sides variable
 
 }
 
+//draws a regular polygon. from P5 examples
+function polygon(x, y, radius, npoints) 
+{
+  var angle = TWO_PI / npoints;
+  beginShape();
+  for (var a = 0; a < TWO_PI; a += angle) 
+  {
+    var sx = x + cos(a) * radius;
+    var sy = y + sin(a) * radius;
+    vertex(sx, sy);
+  }
+  endShape(CLOSE);
+}
