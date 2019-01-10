@@ -57,9 +57,9 @@ function draw()
 
 function readIncoming(inMessage) //when new data comes in it triggers this function, 
 {                               // this works becsuse we subscribed to the channel in setup()
-    slideNumber=inMessage.message.slideNumber;
+    //slideNumber=inMessage.message.slide;
     background(255);
-    image(img[slideNumber], 0,0);
+    image(img[inMessage.message.slide], 0,0);
 
 }
 
