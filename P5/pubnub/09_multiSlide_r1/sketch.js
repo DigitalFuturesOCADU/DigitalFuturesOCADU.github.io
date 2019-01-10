@@ -33,7 +33,7 @@ function setup()
   createCanvas(windowWidth, windowHeight);
   background(255);
   
-  
+  image(img[0],0,0);
 
    // initialize pubnub
   dataServer = new PubNub(
