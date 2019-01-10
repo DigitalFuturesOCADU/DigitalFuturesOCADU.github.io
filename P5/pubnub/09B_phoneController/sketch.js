@@ -38,13 +38,6 @@ function setup()
   });
   
 
-  //create the button
- 
-  sendButton = createButton('NEXT');
-  sendButton.position(0, 0);
-  sendButton.mousePressed(sendTheMessage);
-  sendButton.size(windowWidth,windowHeight);
-
 }
 
 function draw() 
@@ -55,7 +48,7 @@ function draw()
 
 
 ///uses built in mouseClicked function to send the data to the pubnub server
-function deviceShaken() 
+function deviceTurned() 
 {
 
 slideNumber = ((slideNumber+1)<=(totalImages-1)) ? slideNumber+=1 : 0; //shorthand for conditional assignment
