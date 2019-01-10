@@ -17,7 +17,7 @@ var channelName = "powerpoint";
 //image variables
 var img = [];
 var totalImages = 4;
-
+var slideNumber = 0;
 function preload() 
 {
   for (var i = 1; i<=totalImages; i++) 
@@ -56,9 +56,9 @@ function draw()
 
 function readIncoming(inMessage) //when new data comes in it triggers this function, 
 {                               // this works becsuse we subscribed to the channel in setup()
-
+    slideNumber=inMessage.message.slideNumber;
     background(255);
-    image(img[inMessage.message.slideNumber], 0,0);
+    image(img[slideNumber], 0,0);
 
 }
 
