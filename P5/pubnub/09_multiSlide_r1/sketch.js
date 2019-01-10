@@ -18,13 +18,15 @@ var channelName = "powerpoint";
 var img = [];
 var totalImages = 4;
 var slideNumber = 0;
+
 function preload() 
 {
+  //rather than making separate variables we are loading them all into an array
   for (var i = 0; i<totalImages; i++) 
   {
     img[i] = loadImage("load/img" + (i+1) + ".jpg");
   }
-  console.log(img);
+
 }
 
 
@@ -48,11 +50,12 @@ function setup()
   dataServer.subscribe({channels: [channelName]});
 
 
-  background(255);
+    //display a waiting message
+    background(255);
     noStroke();
-    fill(0);  //read the color values from the message
+    fill(0);  
     textSize(30)
-    text("Waiting", 5, height/2);
+    text("Waiting", width/2, height/2);
 
 }
 
@@ -65,7 +68,7 @@ function draw()
 function readIncoming(inMessage) //when new data comes in it triggers this function, 
 {                               
     background(255);
-    image(img[inMessage.message.slide],0,0);
+    image(img[inMessage.message.slide],0,0); //show the image corresponds to the slide number in the array
 
 }
 
