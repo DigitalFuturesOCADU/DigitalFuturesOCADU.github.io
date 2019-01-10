@@ -24,6 +24,7 @@ function preload()
   {
     img[i] = loadImage("load/img" + (i+1) + ".jpg");
   }
+  console.log(img);
 }
 
 
