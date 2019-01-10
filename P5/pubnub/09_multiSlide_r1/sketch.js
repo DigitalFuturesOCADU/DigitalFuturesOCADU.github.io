@@ -20,9 +20,9 @@ var totalImages = 4;
 var slideNumber = 0;
 function preload() 
 {
-  for (var i = 1; i<=totalImages; i++) 
+  for (var i = 0; i<totalImages; i++) 
   {
-    img[i] = loadImage("load/img" + i + ".jpg");
+    img[i] = loadImage("load/img" + (i+1) + ".jpg");
   }
 }
 
