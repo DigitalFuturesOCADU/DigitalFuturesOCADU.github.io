@@ -54,7 +54,7 @@ function draw()
 }
 
 
-///uses built in mouseClicked function to send the data to the pubnub server
+//sends from the button press
 function sendTheMessage() 
 {
 

@@ -3,6 +3,7 @@
  * Kate Hartman / Nick Puckett
  * 
  * remote controller that sends a variable to all the listening devices
+ * phone only
  */
 
 // server variables
@@ -27,7 +28,7 @@ function setup()
   createCanvas(windowWidth, windowHeight);
   background(255);
   
-  setShakeThreshold(50);
+  setShakeThreshold(20);  //sets the sensitivity of the deviceShaken function
 
    // initialize pubnub
   dataServer = new PubNub(
@@ -51,7 +52,7 @@ function draw()
 }
 
 
-///uses built in mouseClicked function to send the data to the pubnub server
+///uses built in deviceShaken function in p5
 function deviceShaken() 
 {
 
