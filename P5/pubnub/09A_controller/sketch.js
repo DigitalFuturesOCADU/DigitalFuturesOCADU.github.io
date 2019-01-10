@@ -14,7 +14,7 @@ var subKey = 'sub-c-64587bc8-b0cf-11e6-a7bb-0619f8945a4f';
 //input variables
 
 var nextButton;
-var slideNumber=-1;
+var slideNumber=0;
 var totalImages = 4;
 
 
