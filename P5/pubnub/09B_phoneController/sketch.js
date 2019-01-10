@@ -27,7 +27,7 @@ function setup()
   createCanvas(windowWidth, windowHeight);
   background(255);
   
-  
+  setShakeThreshold(threshold);
 
    // initialize pubnub
   dataServer = new PubNub(
@@ -37,7 +37,11 @@ function setup()
     ssl: true  //enables a secure connection. This option has to be used if using the OCAD webspace
   });
   
-
+    background(255);
+    noStroke();
+    fill(0);  
+    textSize(90)
+    text("!!!SHAKE!!!", width/2, height/2);
 }
 
 function draw() 
@@ -48,7 +52,7 @@ function draw()
 
 
 ///uses built in mouseClicked function to send the data to the pubnub server
-function deviceTurned() 
+function deviceShaken() 
 {
 
 slideNumber = ((slideNumber+1)<=(totalImages-1)) ? slideNumber+=1 : 0; //shorthand for conditional assignment
