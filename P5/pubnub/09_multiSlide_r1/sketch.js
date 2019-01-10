@@ -65,7 +65,7 @@ function draw()
 function readIncoming(inMessage) //when new data comes in it triggers this function, 
 {                               
     background(255);
-    image(img[inMessage.message.slide], width, width*0.625);
+    image(img[inMessage.message.slide],0,0, width, width*0.625);
 
 }
 
